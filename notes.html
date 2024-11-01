@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1e272e;
+            margin: 0;
+            padding: 0;
+            color: #f5f6fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Upload Notes Section */
+        .upload-notes-section {
+            background: linear-gradient(135deg, #33334d 0%, #23293f 100%);
+            padding: 50px 30px;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            transform: perspective(800px) rotateY(0deg);
+            transition: transform 0.5s ease;
+        }
+
+        .upload-notes-section:hover {
+            transform: perspective(800px) rotateY(-5deg) rotateX(5deg);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-size: 1.1rem;
+            color: #f5f6fa;
+            margin: 10px 0 5px;
+            width: 100%;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        input[type="text"], select, input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            background-color: #3a3d5e;
+            color: #f5f6fa;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            outline: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus, select:focus, input[type="file"]:focus {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+            transform: scale(1.02);
+        }
+
+        /* Button Styles */
+        .btn-upload {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-upload:hover {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .upload-notes-section {
+                padding: 30px 20px;
+                max-width: 100%;
+                transform: none;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            label {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    
+    <body>
+        <section id="upload-notes" class="upload-notes-section">
+            <h2>Upload Your Notes</h2>
+            <form action="/upload_notes" method="POST" enctype="multipart/form-data">
+                <label for="note-title">Title:</label>
+                <input type="text" id="note-title" name="note-title" required>
+                
+                <label for="note-subject-upload">Subject:</label>
+                <select id="note-subject-upload" name="note-subject-upload">
+                    <option value="math">Mathematics</option>
+                    <option value="science">Science</option>
+                    <option value="programming">Programming</option>
+                    <option value="history">History</option>
+                </select>
+
+                <label for="note-file">Select File:</label>
+                <input type="file" id="note-file" name="note-file" required>
+
+                <button type="submit" class="btn-upload">Upload Notes</button>
+            </form>
+        </section>
+
+        <script>
+            // JavaScript for slight tilt effect on hover
+            const uploadSection = document.querySelector('.upload-notes-section');
+
+            uploadSection.addEventListener('mousemove', (e) => {
+                const { offsetX, offsetY } = e;
+                const { offsetWidth, offsetHeight } = uploadSection;
+                const rotateX = (offsetY - offsetHeight / 2) / 25;
+                const rotateY = (offsetX - offsetWidth / 2) / 25;
+                
+                uploadSection.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            uploadSection.addEventListener('mouseleave', () => {
+                uploadSection.style.transform = 'perspective(800px) rotateX(0) rotateY(0)';
+            });
+        </script>
+    </body>
+</html>

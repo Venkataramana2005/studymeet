@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Studymeet - Meet the people to learn">
+    <title>StudyMeet - Learn with Us</title>
+    <link rel="stylesheet" href="new.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="studymeet.jpg" alt="StudyMeet Logo">
+        </div>
+        <div class="logo">
+            <h1>StudyMeet</h1>
+        </div>        
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="classdetails.html">Classes</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="uploadnotes.html">Upload Notes</a></li>
+                <li><a href="userprofile.html">User Profile</a></li>
+                <li><a href="admindashboard.html">Admin Dashboard</a></li>
+                <li><a href="discussionforum.html">Discussion Forum</a></li>
+                <li><a href="referencenotes.html">Reference Notes</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <form action="search.html" method="GET">
+                <input type="text" placeholder="Search classes or notes..." name="query" required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+
+    <!-- FAQs Section -->
+    <section id="faq" class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h4>How do I join a class?</h4>
+            <p>To join a class, simply search for the class in the "Classes" section and click the "Join Class" button.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Can I download notes shared by others?</h4>
+            <p>Yes, you can browse and download notes from the "Shared Notes" section after searching by subject or topic.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How do I contact the instructor?</h4>
+            <p>You can contact instructors through the "Class Details" page. Look for the instructor's profile and messaging options.</p>
+        </div>
+        <!-- More FAQs can be dynamically added -->
+    </section>
+
+    <!-- Expanded Class Materials Section -->
+    <section id="class-materials" class="class-materials-section">
+        <h2>Class Materials</h2>
+        <div class="materials-list">
+            <div class="material-card">
+                <h3>Lecture Slides - Python Basics</h3>
+                <p>Uploaded by: John Doe</p>
+                <a href="#" class="btn-download-material">Download</a>
+            </div>
+            <div class="material-card">
+                <h3>Worksheet - Functions and Loops</h3>
+                <p>Uploaded by: Alice Green</p>
+                <a href="#" class="btn-download-material">Download</a>
+            </div>
+            <!-- More materials dynamically added here -->
+        </div>
+    </section>
+
+    <!-- Expanded Instructor Dashboard -->
+    <section id="instructor-dashboard" class="instructor-dashboard-section">
+        <h2>Instructor Dashboard</h2>
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <h4>Active Classes:</h4>
+                <p>3</p>
+            </div>
+            <div class="stat-card">
+                <h4>Total Students:</h4>
+                <p>120</p>
+            </div>
+            <div class="stat-card">
+                <h4>Materials Uploaded:</h4>
+                <p>8</p>
+            </div>
+        </div>
+    
+        <div class="class-management">
+            <h3>Manage Your Classes</h3>
+            <div class="class-card">
+                <h4>Introduction to Python</h4>
+                <p>Next Session: October 25th</p>
+                <a href="#" class="btn-view-class">View Class</a>
+            </div>
+            <div class="class-card">
+                <h4>Data Structures in C</h4>
+                <p>Next Session: October 28th</p>
+                <a href="#" class="btn-view-class">View Class</a>
+            </div>
+            <!-- More classes can be dynamically added -->
+        </div>
+    </section>
+
+    <!-- Expanded Class Forums -->
+    <section id="class-forum" class="class-forum-section">
+        <h2>Class Forums</h2>
+        <div class="forum-thread">
+            <h4>How do I debug loops in Python?</h4>
+            <p>Posted by: Bob Blue</p>
+            <a href="#">View Thread</a>
+        </div>
+        <div class="forum-thread">
+            <h4>Best resources for learning C programming?</h4>
+            <p>Posted by: Jane Smith</p>
+            <a href="#">View Thread</a>
+        </div>
+        <!-- More forum threads dynamically added -->
+    </section>
+
+    <!-- Integrated Study Planner -->
+    <section id="study-planner" class="study-planner-section">
+        <h2>Study Planner</h2>
+        <div class="planner">
+            <form action="/save_planner" method="POST">
+                <label for="study-date">Select Date:</label>
+                <input type="date" id="study-date" name="study-date" required>
+    
+                <label for="study-task">Task Description:</label>
+                <textarea id="study-task" name="study-task" placeholder="Enter study task" required></textarea>
+    
+                <button type="submit" class="btn-add-task">Add Task</button>
+            </form>
+        </div>
+        <div class="planner-tasks">
+            <h3>Upcoming Tasks</h3>
+            <div class="task">
+                <p><strong>October 26th:</strong> Complete Python homework</p>
+            </div>
+            <div class="task">
+                <p><strong>October 27th:</strong> Attend Data Structures class</p>
+            </div>
+            <!-- More tasks dynamically added -->
+        </div>
+    </section>
+
+    <!-- Dynamic Notifications Dropdown -->
+    <section>
+        <div class="notifications-dropdown">
+        <button class="btn-notifications">Notifications (3)</button>
+        <div class="notifications-content">
+            <div class="notification">
+                <p><strong>Class Reminder:</strong> Your "Python Basics" class starts in 1 hour.</p>
+            </div>
+            <div class="notification">
+                <p><strong>New Class:</strong> "Advanced Machine Learning" is now open for enrollment.</p>
+            </div>
+            <div class="notification">
+                <p><strong>New Message:</strong> You have a new message from your instructor.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Advanced Profile Customization -->
+    <section id="customize-profile" class="customize-profile-section">
+        <h2>Customize Your Profile</h2>
+        <form action="/update_profile" method="POST" enctype="multipart/form-data">
+            <label for="profile-pic">Profile Picture:</label>
+            <input type="file" id="profile-pic" name="profile-pic" accept="image/*" required>
+    
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio" placeholder="Tell us a little about yourself" required></textarea>
+    
+            <label for="social-links">Social Media Links:</label>
+            <input type="url" id="social-facebook" name="social-facebook" placeholder="Facebook URL">
+            <input type="url" id="social-linkedin" name="social-linkedin" placeholder="LinkedIn URL">
+            <input type="url" id="social-twitter" name="social-twitter" placeholder="Twitter URL">
+    
+            <button type="submit" class="btn-save-profile">Save Changes</button>
+        </form>
+    </section>
+
+    <!-- Student Progress Tracker -->
+    <section id="progress-tracker" class="progress-tracker-section">
+        <h2>Progress Tracker</h2>
+        <div class="progress-cards">
+            <div class="progress-card">
+                <h4>Python Basics</h4>
+                <p>Completion: 75%</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+            </div>
+            <div class="progress-card">
+                <h4>Data Structures in C</h4>
+                <p>Completion: 40%</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 40%;"></div>
+                </div>
+            </div>
+            <div class="progress-card">
+                <h4>Linear Algebra</h4>
+                <p>Completion: 90%</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teacher-Student Interaction -->
+    <section id="teacher-student-interaction" class="interaction-section">
+        <h2>Teacher-Student Interaction</h2>
+        <div class="interaction-container">
+            <div class="interaction">
+                <h4>Ask a Question</h4>
+                <form action="/submit_question" method="POST">
+                    <textarea name="question" placeholder="Ask your teacher a question" required></textarea>
+                    <button type="submit" class="btn-submit-question">Submit Question</button>
+                </form>
+            </div>
+            <div class="interaction">
+                <h4>Teacher's Response</h4>
+                <div class="response-box">
+                    <p><strong>Question:</strong> Can you explain recursion in Python?</p>
+                    <p><strong>Response:</strong> Sure! Recursion is a process where a function calls itself, allowing for solutions to complex problems with simpler ones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback" class="feedback-section">
+        <h2>Leave Feedback</h2>
+        <form action="/submit_feedback" method="POST">
+            <label for="class-feedback">Class Feedback:</label>
+            <textarea id="class-feedback" name="class-feedback" placeholder="Your thoughts on the class?" required></textarea>
+    
+            <label for="platform-feedback">Platform Feedback:</label>
+            <textarea id="platform-feedback" name="platform-feedback" placeholder="Any suggestions for improving the platform?" required></textarea>
+    
+            <button type="submit" class="btn-submit-feedback">Submit Feedback</button>
+        </form>
+    </section>
+    
+
+    <!-- Contact Support Section -->
+    <section id="contact-support" class="contact-support-section">
+        <h2>Contact Support</h2>
+        <form action="/submit_support_request" method="POST">
+            <label for="support-category">Select Category:</label>
+            <select id="support-category" name="support-category">
+                <option value="technical">Technical Issue</option>
+                <option value="billing">Billing Issue</option>
+                <option value="general">General Inquiry</option>
+            </select>
+    
+            <label for="support-description">Describe Your Issue:</label>
+            <textarea id="support-description" name="support-description" placeholder="Please describe your issue in detail" required></textarea>
+    
+            <button type="submit" class="btn-submit-support">Submit Support Request</button>
+        </form>
+    </section>
+    
+
+    <!-- Expanded Privacy Policy Section -->
+    <section id="privacy-policy" class="privacy-policy-section">
+        <h2>Privacy Policy</h2>
+        <div class="policy-content">
+            <h3>Introduction</h3>
+            <p>We take your privacy seriously. This privacy policy outlines how we collect, use, and protect your information.</p>
+    
+            <h3>Information We Collect</h3>
+            <p>We may collect personal data such as your name, email, and usage behavior on our platform.</p>
+    
+            <h3>How We Use Your Information</h3>
+            <p>Your information is used to provide better services, including class recommendations and personalized content.</p>
+    
+            <h3>Data Protection</h3>
+            <p>We use encryption and secure servers to ensure that your personal data is protected from unauthorized access.</p>
+        </div>
+    </section>
+
+    <!-- Gamification Section -->
+    <section id="gamification" class="gamification-section">
+        <h2>Achievements & Badges</h2>
+        <div class="badge-container">
+            <div class="badge-card">
+                <img src="badge-beginner.png" alt="Beginner Badge">
+                <h4>Beginner</h4>
+                <p>Complete your first class!</p>
+            </div>
+            <div class="badge-card">
+                <img src="badge-master.png" alt="Master Badge">
+                <h4>Master</h4>
+                <p>Complete 5 advanced classes.</p>
+            </div>
+            <div class="badge-card">
+                <img src="badge-mentor.png" alt="Mentor Badge">
+                <h4>Mentor</h4>
+                <p>Help 10 students with their questions.</p>
+            </div>
+            <div class="badge-card">
+                <img src="badge-champion.png" alt="Champion Badge">
+                <h4>Champion</h4>
+                <p>Top 1% of students in overall scores.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Security Settings -->
+    <section id="security-settings" class="security-settings-section">
+        <h2>Security Settings</h2>
+        <form action="/update_security" method="POST">
+            <label for="change-password">Change Password:</label>
+            <input type="password" id="change-password" name="change-password" placeholder="Enter new password" required>
+    
+            <!-- Two-Factor Authentication Checkbox -->
+            <div class="checkbox-group">
+                <input type="checkbox" id="two-factor-auth" name="two-factor-auth">
+                <label for="two-factor-auth">Enable Two-Factor Authentication (2FA)</label>
+            </div>
+    
+            <!-- Email for Recovery -->
+            <label for="email-recovery">Email for Recovery:</label>
+            <input type="email" id="email-recovery" name="email-recovery" placeholder="Enter recovery email" required>
+    
+            <!-- Submit Button -->
+            <button type="submit" class="btn-update-security">Update Security Settings</button>
+        </form>
+    </section>
+
+    
+    <!-- Forum Enhancements -->
+    <section id="forum-enhancements" class="forum-enhancements-section">
+        <h2>Class Discussion Forums</h2>
+        <div class="forum-threads">
+            <div class="forum-thread">
+                <h4>Python Recursion Help</h4>
+                <p>Last Post by AliceGreen - 10 mins ago</p>
+                <a href="/thread/python-recursion">View Thread</a>
+            </div>
+            <div class="forum-thread">
+                <h4>Data Structures in C - Pointers</h4>
+                <p>Last Post by JohnDoe - 1 hour ago</p>
+                <a href="/thread/data-structures-pointers">View Thread</a>
+            </div>
+            <div class="forum-thread">
+                <h4>Machine Learning Course Materials</h4>
+                <p>Last Post by StudyMaster22 - 2 days ago</p>
+                <a href="/thread/ml-course-materials">View Thread</a>
+            </div>
+        </div>
+        <form action="/create_thread" method="POST" class="create-thread-form">
+            <label for="thread-title">Create New Thread:</label>
+            <input type="text" id="thread-title" name="thread-title" placeholder="Enter thread title" required>
+    
+            <label for="thread-body">Thread Content:</label>
+            <textarea id="thread-body" name="thread-body" placeholder="Start a new discussion..." required></textarea>
+    
+            <button type="submit" class="btn-create-thread">Create Thread</button>
+        </form>
+    </section>
+
+    <!-- Help Center -->
+    <section id="help-center" class="help-center-section">
+        <h2>Help Center</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h4>How do I enroll in a class?</h4>
+                <p>To enroll in a class, navigate to the "Classes" section, select the class you're interested in, and click "Enroll." If it's a paid class, you'll be prompted to make a payment.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How do I upload notes?</h4>
+                <p>Go to your class dashboard, and under the "Materials" section, click "Upload Notes." You can upload files in PDF or DOC format.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How can I track my progress?</h4>
+                <p>You can track your progress in the "Progress Tracker" section on your profile dashboard. Progress is tracked by completion percentage for each class you're enrolled in.</p>
+            </div>
+        </div>
+        <form action="/submit_question_help" method="POST" class="help-form">
+            <label for="help-question">Still have a question? Ask here:</label>
+            <textarea id="help-question" name="help-question" placeholder="Type your question..." required></textarea>
+            <button type="submit" class="btn-submit-help">Submit Question</button>
+        </form>
+    </section>
+
+    <!-- Subscription Plans Section -->
+    <section id="subscription-plans" class="subscription-plans-section">
+        <h2>Subscription Plans</h2>
+        <div class="plans-container">
+            <div class="plan-card">
+                <h3>Basic Plan</h3>
+                <p>Free Access to limited classes and materials</p>
+                <h4>Free</h4>
+                <button class="btn-select-plan">Select Plan</button>
+            </div>
+            <div class="plan-card">
+                <h3>Pro Plan</h3>
+                <p>Unlimited access to all classes and materials</p>
+                <h4>$9.99/month</h4>
+                <button class="btn-select-plan">Select Plan</button>
+            </div>
+            <div class="plan-card">
+                <h3>Premium Plan</h3>
+                <p>All access + Personal mentor sessions</p>
+                <h4>$19.99/month</h4>
+                <button class="btn-select-plan">Select Plan</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal Information Section -->
+    <section id="legal-info" class="legal-info-section">
+        <h2>Legal Information</h2>
+        <div class="legal-content">
+            <h3>Terms of Service</h3>
+            <p>By using this platform, you agree to the terms and conditions laid out in this document. This includes agreeing to the rules of behavior within the platform and ensuring the security of your account.</p>
+    
+            <h3>Refund Policy</h3>
+            <p>Refunds are offered within 14 days of purchase for all classes, provided that less than 20% of the material has been accessed. If a class is found to be incomplete or misleading, a full refund will be issued.</p>
+    
+            <h3>Data Privacy</h3>
+            <p>We are committed to protecting your data. We do not share your personal information with third parties, and all data is encrypted for security purposes.</p>
+        </div>
+    </section>
+
+    <!-- User Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <h2>What Our Users Say</h2>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <p>"StudyMeet has completely changed the way I learn. The ability to connect with real students and teachers has made all the difference!"</p>
+                <h4>- Sarah K.</h4>
+            </div>
+            <div class="testimonial">
+                <p>"The platform is easy to use and has so many resources. The badges and leaderboards make it fun to keep learning!"</p>
+                <h4>- Mike T.</h4>
+            </div>
+            <div class="testimonial">
+                <p>"The online classes helped me get through my finals. I love how I can download notes and ask questions anytime."</p>
+                <h4>- Emily R.</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <h2>About StudyMeet</h2>
+        <p>StudyMeet is an online learning platform designed to connect students and educators worldwide. Our mission is to make learning accessible, interactive, and collaborative. Whether you are looking to take live classes or access notes, StudyMeet has got you covered.</p>
+        <div class="team">
+            <h3>Our Team</h3>
+            <div class="team-member">
+                <img src="WhatsApp Image 2024-09-24 at 14.43.02_506b6f86.jpg" alt="Chillale Venkataramana">
+                <h4>Chillale Venkataramana</h4>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="IMG-20240924-WA0003[1].jpg" alt="Kashik">
+                <h4>Kashik</h4>
+                <p>Chief Operating Officer & Chief Techonolgy Officer</p>
+            </div>
+            <div class="team-member">
+                <img src="IMG-20240924-WA0002[1].jpg" alt="Sujith">
+                <h4>Sujith</h4>
+                <p>Chief Financial Officer & Chief Learning Officer</p>
+            </div>
+            <!-- More team members can be added dynamically -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+            </div>
+            <p>&copy; 2024 StudyMeet. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

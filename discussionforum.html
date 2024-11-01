@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e2d24, #344e41);
+            margin: 0;
+            padding: 20px;
+            color: #dfe6e9;
+        }
+
+        /* Forum Section Styles */
+        .forum-section {
+            background: rgba(30, 45, 36, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        h2, h3 {
+            color: #a5d6a7;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .create-thread h3 {
+            font-size: 1.8rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #b8e994;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #344e41;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+            font-size: 1rem;
+            color: #dfe6e9;
+            background-color: rgba(52, 78, 65, 0.8);
+        }
+
+        input[type="text"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #a5d6a7;
+            outline: none;
+            transform: scale(1.02);
+        }
+
+        button {
+            background: linear-gradient(135deg, #1b5e20, #388e3c);
+            color: #dfe6e9;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, background 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: linear-gradient(135deg, #388e3c, #1b5e20);
+        }
+
+        /* Thread List */
+        .thread-list {
+            margin-top: 30px;
+        }
+
+        .thread-card {
+            background: rgba(30, 45, 36, 0.8);
+            border-radius: 6px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .thread-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .thread-card h4 {
+            margin: 0 0 5px;
+            color: #a5d6a7;
+        }
+
+        .thread-card p {
+            margin: 3px 0;
+            color: #b8e994;
+            font-size: 0.9rem;
+        }
+
+        .thread-card a {
+            text-decoration: none;
+            color: #a5d6a7;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .thread-card a:hover {
+            color: #d4e157;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateX(-20px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+
+    <body>
+        <section id="forum" class="forum-section">
+            <h2>Discussion Forum</h2>
+            <div class="create-thread">
+                <h3>Create a New Thread</h3>
+                <form id="threadForm">
+                    <label for="thread-title">Title:</label>
+                    <input type="text" id="thread-title" name="thread-title" required>
+                    <label for="thread-subject">Subject:</label>
+                    <select id="thread-subject" name="thread-subject">
+                        <option value="math">Mathematics</option>
+                        <option value="science">Science</option>
+                        <option value="programming">Programming</option>
+                        <option value="history">History</option>
+                    </select>
+                    <label for="thread-content">Content:</label>
+                    <textarea id="thread-content" name="thread-content" required></textarea>
+                    <button type="button" onclick="addThread()">Submit</button>
+                </form>
+            </div>
+
+            <div class="thread-list" id="threadList">
+                <h3>Recent Threads</h3>
+                <div class="thread-card">
+                    <h4>Best Python Practices</h4>
+                    <p>Posted by: Alice Green</p>
+                    <p>Replies: 5</p>
+                    <a href="#">View Thread</a>
+                </div>
+                <div class="thread-card">
+                    <h4>Understanding Calculus Derivatives</h4>
+                    <p>Posted by: Bob Blue</p>
+                    <p>Replies: 8</p>
+                    <a href="#">View Thread</a>
+                </div>
+                <!-- More thread cards can be dynamically added -->
+            </div>
+        </section>
+
+        <script>
+            function addThread() {
+                // Get form values
+                const title = document.getElementById("thread-title").value;
+                const subject = document.getElementById("thread-subject").value;
+                const content = document.getElementById("thread-content").value;
+
+                // Create a new thread card
+                const threadCard = document.createElement("div");
+                threadCard.classList.add("thread-card");
+
+                // Add content to thread card
+                threadCard.innerHTML = `
+                    <h4>${title}</h4>
+                    <p>Subject: ${subject}</p>
+                    <p>${content}</p>
+                    <a href="#">View Thread</a>
+                `;
+
+                // Append to thread list
+                document.getElementById("threadList").appendChild(threadCard);
+
+                // Reset form
+                document.getElementById("threadForm").reset();
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>/* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1e24;
+            color: #fff;
+        }
+        
+        /* Upload Notes Section */
+        .upload-notes-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(34, 49, 63, 0.9), rgba(44, 62, 80, 0.85)), url('study-background.jpg') no-repeat center/cover;
+            color: #ecf0f1;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            margin: 50px auto;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
+        .upload-notes-section:hover {
+            transform: scale(1.02);
+        }
+        
+        .upload-notes-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #f39c12;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #bdc3c7;
+            align-self: flex-start;
+        }
+        
+        input[type="text"], select, input[type="file"] {
+            width: 100%;
+            max-width: 500px;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ecf0f1;
+            outline: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        input[type="text"]:focus, select:focus, input[type="file"]:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            transform: translateY(-3px);
+        }
+        
+        /* Button Styles */
+        .btn-upload {
+            background: linear-gradient(135deg, #16a085, #27ae60);
+            color: #ecf0f1;
+            padding: 14px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+        }
+        .btn-upload:hover {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            transform: translateY(-5px) scale(1.05);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .upload-notes-section {
+                padding: 40px 15px;
+            }
+            .upload-notes-section h2 {
+                font-size: 2rem;
+            }
+            input[type="text"], select, input[type="file"] {
+                max-width: 100%;
+            }
+            .btn-upload {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+        </style>
+    <section id="upload-notes" class="upload-notes-section">
+        <h2>Upload Your Notes</h2>
+        <form action="/upload_notes" method="POST" enctype="multipart/form-data">
+            <label for="note-title">Title:</label>
+            <input type="text" id="note-title" name="note-title" required>
+            
+            <label for="note-subject-upload">Subject:</label>
+            <select id="note-subject-upload" name="note-subject-upload">
+                <option value="math">Mathematics</option>
+                <option value="science">Science</option>
+                <option value="programming">Programming</option>
+                <option value="history">History</option>
+            </select>
+    
+            <label for="note-file">Select File:</label>
+            <input type="file" id="note-file" name="note-file" required>
+    
+            <button type="submit" class="btn-upload">Upload Notes</button>
+        </form>
+    </section>
+    <script>// JavaScript to show file name in the input area when a file is selected
+        document.getElementById('note-file').addEventListener('change', function () {
+            const fileLabel = document.createElement('div');
+            fileLabel.style.marginTop = "10px";
+            fileLabel.style.color = "#ecf0f1";
+            fileLabel.textContent = `Selected file: ${this.files[0].name}`;
+            const existingLabel = document.querySelector('.file-name-display');
+            if (existingLabel) {
+                existingLabel.textContent = fileLabel.textContent;
+            } else {
+                fileLabel.className = 'file-name-display';
+                this.parentNode.appendChild(fileLabel);
+            }
+        });
+        </script>
+</html>

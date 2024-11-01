@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>/* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a2e;
+            color: #fff;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(72, 61, 139, 0.9), rgba(123, 104, 238, 0.8)), url('contact-background.jpg') no-repeat center/cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+        
+        .contact-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #f1c40f;
+            animation: fadeInDown 0.6s ease;
+        }
+        
+        .contact-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: #eee;
+            animation: fadeInDown 0.8s ease;
+        }
+        
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeInUp 1s ease;
+        }
+        
+        label {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #f1c40f;
+            align-self: flex-start;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            max-width: 500px;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            backdrop-filter: blur(4px);
+            outline: none;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        textarea {
+            resize: vertical;
+            height: 150px;
+        }
+        
+        /* Submit Button */
+        .btn-submit {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+        
+        .btn-submit:hover {
+            background-color: #2ecc71;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 50px 15px;
+            }
+        
+            .contact-section h2 {
+                font-size: 2rem;
+            }
+        
+            .contact-section p {
+                font-size: 1rem;
+            }
+        
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                max-width: 100%;
+            }
+        
+            .btn-submit {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+        </style>
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to reach out to us via the form below.</p>
+        <form action="/submit_contact_form" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+    </section>
+    <script>document.addEventListener('DOMContentLoaded', () => {
+        const form = document.querySelector('form');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+        const submitButton = document.querySelector('.btn-submit');
+    
+        // Function to show alert message
+        function showAlert(message, color = '#f1c40f') {
+            const alertBox = document.createElement('div');
+            alertBox.textContent = message;
+            alertBox.style.backgroundColor = color;
+            alertBox.style.padding = '10px 20px';
+            alertBox.style.color = '#1a1a2e';
+            alertBox.style.fontSize = '1.1rem';
+            alertBox.style.borderRadius = '5px';
+            alertBox.style.marginTop = '15px';
+            alertBox.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.2)';
+            alertBox.style.animation = 'fadeInUp 0.5s ease forwards';
+            form.appendChild(alertBox);
+            
+            setTimeout(() => alertBox.remove(), 3000);
+        }
+    
+        // Form validation and submit event
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+    
+            // Check if all fields are filled
+            if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
+                showAlert('Please fill in all fields', '#e74c3c');
+            } else {
+                showAlert('Thank you for your message!', '#2ecc71');
+                form.reset();
+            }
+        });
+    
+        // Hover effect on inputs
+        [nameInput, emailInput, messageInput].forEach(input => {
+            input.addEventListener('mouseenter', () => {
+                input.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+            });
+            input.addEventListener('mouseleave', () => {
+                input.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+            });
+        });
+    });
+    </script>
+</html>

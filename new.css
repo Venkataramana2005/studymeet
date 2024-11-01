@@ -1,0 +1,882 @@
+header {
+    background-color: #4b0082; /* Dark violet background */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+header:hover {
+    background-color: #6a0dad; /* Lighter violet on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+.logo img {
+    height: 50px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+.search-bar {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.search-bar form {
+    display: inline-block;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.resources {
+    text-align: center;
+}
+
+.resources h2 {
+    margin: 20px 0;
+}
+
+.resources ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resources li {
+    margin: 10px 0;
+}
+
+.resources a {
+    text-decoration: none;
+    color: #007BFF; /* Example color */
+}
+.logo h1 {
+    color: #ffffff; /* White text color */
+    margin: 0;
+    font-size: 2rem;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none; /* Remove bullets */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Spacing between links */
+}
+
+nav ul li {
+    position: relative; /* For absolute positioning of the hover effect */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #ecf0f1; /* Light color for links */
+    font-size: 1.1rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffdd57; /* Yellow color on hover */
+    transform: translateY(-3px); /* Lift effect */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #ffdd57; /* Yellow underline */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+.class-materials-section {
+    padding: 40px;
+    background-color: #eae7f2; /* Light background to contrast with dark violet */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.class-materials-section h2 {
+    color: #4b0082; /* Dark violet color */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Larger heading */
+}
+
+.materials-list {
+    display: flex;
+    flex-direction: column; /* Arrange cards in a column */
+    align-items: center;
+    gap: 20px; /* Spacing between cards */
+}
+
+.material-card {
+    background: #fff; /* White background for contrast */
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Maximum width of cards */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Soft shadow for 3D effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for effects */
+}
+
+.material-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Lift and slightly scale up on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.material-card h3 {
+    color: #4b0082; /* Dark violet color */
+    margin-bottom: 10px;
+}
+
+.material-card p {
+    color: #555; /* Darker gray for text */
+    margin-bottom: 15px;
+}
+
+.btn-download-material {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #4b0082; /* Dark violet */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease, transform 0.3s ease; /* Transition for effects */
+}
+
+.btn-download-material:hover {
+    background: #5c2c94; /* Lighter violet on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+.instructor-dashboard-section {
+    padding: 40px;
+    background-color: #eae7f2; /* Light background to contrast with dark violet */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.instructor-dashboard-section h2 {
+    color: #4b0082; /* Dark violet color */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Larger heading */
+}
+
+.dashboard-stats {
+    display: flex;
+    justify-content: space-around; /* Space out the stat cards */
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: #fff; /* White background for contrast */
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%; /* Width of each card */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Soft shadow for 3D effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for effects */
+}
+
+.stat-card:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.stat-card h4 {
+    color: #4b0082; /* Dark violet color */
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 1.5em; /* Larger font for stats */
+    color: #555; /* Darker gray for text */
+}
+
+.class-management {
+    margin-top: 30px;
+}
+
+.class-management h3 {
+    color: #4b0082; /* Dark violet color */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.class-card {
+    background: #fff; /* White background for contrast */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0; /* Spacing between classes */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Soft shadow for 3D effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for effects */
+}
+
+.class-card:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.btn-view-class {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #4b0082; /* Dark violet */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease; /* Transition for effects */
+}
+
+.btn-view-class:hover {
+    background: #5c2c94; /* Lighter violet on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+.class-forum-section {
+    padding: 40px;
+    background-color: #eae7f2; /* Light background to contrast with dark violet */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.class-forum-section h2 {
+    color: #4b0082; /* Dark violet color */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Larger heading */
+}
+
+.forum-thread {
+    background: #fff; /* White background for contrast */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0; /* Spacing between threads */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Soft shadow for 3D effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for effects */
+}
+
+.forum-thread:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.forum-thread h4 {
+    color: #4b0082; /* Dark violet color */
+    margin-bottom: 10px;
+}
+
+.forum-thread p {
+    color: #555; /* Darker gray for text */
+}
+
+.forum-thread a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #4b0082; /* Dark violet */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease; /* Transition for effects */
+}
+
+.forum-thread a:hover {
+    background: #5c2c94; /* Lighter violet on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+.study-planner-section {
+    padding: 40px;
+    background-color: #eae7f2; /* Light background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.study-planner-section h2 {
+    color: #4b0082; /* Dark violet color */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Larger heading */
+}
+
+.planner {
+    margin-bottom: 30px;
+}
+
+.planner form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form elements */
+}
+
+.planner label {
+    color: #4b0082; /* Dark violet */
+}
+
+.planner input[type="date"],
+.planner textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border 0.3s ease; /* Transition for input focus */
+}
+
+.planner input[type="date"]:focus,
+.planner textarea:focus {
+    border: 1px solid #4b0082; /* Highlight border on focus */
+}
+
+.btn-add-task {
+    background: #4b0082; /* Dark violet */
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease; /* Transition for effects */
+}
+
+.btn-add-task:hover {
+    background: #5c2c94; /* Lighter violet on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.planner-tasks {
+    margin-top: 20px;
+}
+
+.task {
+    background: #fff; /* White background for task items */
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0; /* Space between tasks */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.notifications-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.btn-notifications {
+    background: #4b0082; /* Dark violet */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease; /* Transition for effects */
+}
+
+.btn-notifications:hover {
+    background: #5c2c94; /* Lighter violet on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.notifications-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 15px;
+    width: 250px; /* Set width for dropdown */
+}
+
+.notifications-dropdown:hover .notifications-content {
+    display: block; /* Show notifications on hover */
+}
+
+.notification {
+    margin-bottom: 10px; /* Space between notifications */
+}
+
+.notification p {
+    margin: 0;
+}
+.customize-profile-section {
+    padding: 40px;
+    background-color: #eae7f2; /* Light background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.customize-profile-section h2 {
+    color: #4b0082; /* Dark violet color */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Larger heading */
+}
+
+.customize-profile-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form elements */
+}
+
+.customize-profile-section label {
+    color: #4b0082; /* Dark violet */
+}
+
+.customize-profile-section input[type="file"],
+.customize-profile-section input[type="url"],
+.customize-profile-section textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border 0.3s ease; /* Transition for input focus */
+}
+
+.customize-profile-section input[type="file"]:focus,
+.customize-profile-section input[type="url"]:focus,
+.customize-profile-section textarea:focus {
+    border: 1px solid #4b0082; /* Highlight border on focus */
+}
+
+.btn-save-profile {
+    background: #4b0082; /* Dark violet */
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease; /* Transition for effects */
+}
+
+.btn-save-profile:hover {
+    background: #5c2c94; /* Lighter violet on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.progress-tracker-section {
+    padding: 40px;
+    background-color: #f3f1fa; /* Light background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 30px; /* Space above section */
+}
+
+.progress-tracker-section h2 {
+    color: #4b0082; /* Dark violet color */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Larger heading */
+}
+
+.progress-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between progress cards */
+}
+
+.progress-card {
+    background: #fff; /* White background for card */
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.progress-card h4 {
+    color: #4b0082; /* Dark violet */
+}
+
+.progress-bar {
+    background: #eae7f2; /* Light background for progress bar */
+    border-radius: 5px;
+    overflow: hidden; /* Ensure inner progress doesn't overflow */
+    height: 20px; /* Height of the progress bar */
+}
+
+.progress {
+    background: #4b0082; /* Dark violet */
+    height: 100%; /* Fill the full height of the progress bar */
+    transition: width 0.4s ease; /* Smooth transition for progress */
+}
+.interaction-section, .feedback-section, .contact-support-section, .privacy-policy-section {
+    padding: 40px;
+    background-color: #eae7f2; /* Light background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Space between sections */
+}
+
+h2 {
+    color: #4b0082; /* Dark violet color */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Larger heading */
+}
+
+.interaction h4, .feedback-section label, .contact-support-section label {
+    color: #4b0082; /* Dark violet */
+}
+
+.interaction-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between interaction items */
+}
+
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border 0.3s ease; /* Transition for input focus */
+}
+
+textarea:focus {
+    border: 1px solid #4b0082; /* Highlight border on focus */
+}
+
+.btn-submit-question, .btn-submit-feedback, .btn-submit-support {
+    background: #4b0082; /* Dark violet */
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease; /* Transition for effects */
+}
+
+.btn-submit-question:hover, .btn-submit-feedback:hover, .btn-submit-support:hover {
+    background: #5c2c94; /* Lighter violet on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.policy-content {
+    margin-top: 20px; /* Space above policy content */
+}
+
+.policy-content h3 {
+    color: #4b0082; /* Dark violet */
+}
+
+.policy-content p {
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+.testimonials-section, .about-section {
+    padding: 40px;
+    background-color: #f5f5f5; /* Light grey for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Space between sections */
+}
+
+h2 {
+    color: #4b0082; /* Dark violet color */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Larger heading */
+}
+
+.testimonials-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between testimonials */
+}
+
+.testimonial {
+    background: #eae7f2; /* Light violet background for testimonials */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Animation for hover */
+}
+
+.testimonial:hover {
+    transform: scale(1.02); /* Slight lift effect on hover */
+}
+
+.about-section p {
+    margin-bottom: 20px; /* Space below paragraph */
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap; /* Allow team members to wrap */
+    gap: 20px; /* Space between team members */
+    justify-content: center; /* Center align team members */
+}
+
+.team-member {
+    text-align: center; /* Center align text */
+    width: 150px; /* Set a fixed width for team members */
+}
+
+.team-member img {
+    width: 100%; /* Responsive image */
+    border-radius: 50%; /* Circular image */
+}
+
+footer {
+    background: #4b0082; /* Dark violet footer */
+    color: #fff;
+    padding: 20px;
+    text-align: center; /* Center align text */
+}
+
+.footer-links {
+    margin-bottom: 15px; /* Space below links */
+}
+
+.footer-links a {
+    color: #fff; /* White text */
+    margin: 0 10px; /* Space between links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Transition for hover effect */
+}
+
+.footer-links a:hover {
+    color: #c0c0c0; /* Lighter color on hover */
+}
+.subscription-plans-section, .legal-info-section {
+    padding: 40px;
+    background-color: #f5f5f5; /* Light grey for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Space between sections */
+}
+
+h2 {
+    color: #4b0082; /* Dark violet color */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Larger heading */
+}
+
+.plans-container {
+    display: flex;
+    justify-content: center; /* Center align the plans */
+    gap: 20px; /* Space between plan cards */
+}
+
+.plan-card {
+    background: #eae7f2; /* Light violet background for plans */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align text */
+    transition: transform 0.3s ease; /* Animation for hover */
+}
+
+.plan-card:hover {
+    transform: scale(1.05); /* Slight lift effect on hover */
+}
+
+.plan-card h4 {
+    font-size: 1.5em; /* Larger price text */
+    color: #4b0082; /* Dark violet color */
+}
+
+.legal-info-section p {
+    margin-bottom: 20px; /* Space below paragraph */
+}
+
+.legal-content {
+    background: #fff; /* White background for contrast */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background: #4b0082; /* Dark violet footer */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px; /* Space above footer */
+}
+.forum-enhancements-section, .help-center-section {
+    padding: 40px;
+    background-color: #f5f5f5; /* Light grey for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Space between sections */
+}
+
+h2 {
+    color: #4b0082; /* Dark violet color */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Larger heading */
+}
+
+.forum-threads {
+    margin-bottom: 30px; /* Space below the threads */
+}
+
+.forum-thread {
+    background: #eae7f2; /* Light violet background for threads */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px; /* Space between threads */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.forum-thread h4 {
+    margin: 0; /* Remove margin for heading */
+}
+
+.create-thread-form, .help-form {
+    background: #fff; /* White background for forms */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-thread-form input, 
+.create-thread-form textarea,
+.help-form textarea {
+    width: 100%; /* Full width for input fields */
+    padding: 10px;
+    margin: 10px 0; /* Space above and below */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.btn-create-thread, .btn-submit-help {
+    background-color: #4b0082; /* Dark violet button */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.btn-create-thread:hover, .btn-submit-help:hover {
+    background-color: #3b0071; /* Darker violet on hover */
+}
+
+.faq-container {
+    margin-bottom: 30px; /* Space below FAQ section */
+}
+
+.faq-item {
+    background: #eae7f2; /* Light violet background for FAQs */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px; /* Space between FAQ items */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.gamification-section, .security-settings-section {
+    padding: 40px;
+    background-color: #f5f5f5; /* Light grey for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Space between sections */
+}
+
+h2 {
+    color: #4b0082; /* Dark violet color */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Larger heading */
+}
+
+.badge-container {
+    display: flex;
+    justify-content: space-around; /* Space badges evenly */
+    flex-wrap: wrap; /* Wrap badges if necessary */
+}
+
+.badge-card {
+    background: #eae7f2; /* Light violet background for badges */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px; /* Space around each badge card */
+    transition: transform 0.2s; /* Animation effect */
+}
+
+.badge-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.badge-card img {
+    max-width: 100px; /* Set maximum width for images */
+    margin-bottom: 10px; /* Space below images */
+}
+
+.security-settings-section form {
+    background: #fff; /* White background for form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.security-settings-section input {
+    width: 100%; /* Full width for input fields */
+    padding: 10px;
+    margin: 10px 0; /* Space above and below */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.checkbox-group {
+    margin: 10px 0; /* Space above and below checkbox */
+}
+
+.btn-update-security {
+    background-color: #4b0082; /* Dark violet button */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.btn-update-security:hover {
+    background-color: #3b0071; /* Darker violet on hover */
+}
+.faq-section {
+    padding: 40px;
+    background-color: #f5f5f5; /* Light grey for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Space between sections */
+}
+
+h2 {
+    color: #4b0082; /* Dark violet color */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Larger heading */
+}
+
+.faq-item {
+    background: #eae7f2; /* Light violet background for FAQs */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px; /* Space between FAQ items */
+    transition: background-color 0.3s; /* Animation for background color change */
+}
+
+.faq-item:hover {
+    background: #d1cce5; /* Darker violet on hover */
+}
+
+.faq-item h4 {
+    margin: 0;
+    color: #4b0082; /* Dark violet color for question */
+}
+
+.faq-item p {
+    margin: 5px 0 0; /* Space above and below the answer */
+    color: #333; /* Darker text for readability */
+}

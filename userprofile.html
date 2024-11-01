@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style> body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #1f2a35, #283f50);
+        margin: 0;
+        padding: 20px;
+        color: #f0f0f0;
+    }
+
+    /* Profile Information Section */
+    .profile-info {
+        background: rgba(34, 49, 63, 0.95);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        margin-bottom: 20px;
+        transition: transform 0.3s ease-in-out;
+    }
+    .profile-info:hover {
+        transform: scale(1.03);
+    }
+    .profile-info h3 {
+        margin: 0;
+        color: #f39c12;
+        text-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Profile Actions */
+    .profile-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    .profile-actions button {
+        background: linear-gradient(90deg, #3498db, #2980b9);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .profile-actions button:hover {
+        background: linear-gradient(90deg, #2980b9, #3498db);
+        transform: translateY(-3px);
+    }
+
+    /* Enrolled Classes & Uploaded Notes Sections */
+    .enrolled-classes,
+    .uploaded-notes {
+        background: rgba(34, 49, 63, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
+    .enrolled-classes:hover, .uploaded-notes:hover {
+        transform: scale(1.02);
+    }
+
+    h3 {
+        color: #f39c12;
+        text-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* List Styling */
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li {
+        background: #2e4053;
+        border-radius: 5px;
+        margin: 10px 0;
+        padding: 10px;
+        color: #ecf0f1;
+        transition: background-color 0.3s ease;
+    }
+    li:hover {
+        background: #34495e;
+    }
+
+    /* Links in Uploaded Notes */
+    li a {
+        color: #1abc9c;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    li a:hover {
+        color: #16a085;
+    }</style>
+    <div class="profile-info">
+        <h3>John Doe</h3>
+        <p>Email: john.doe@example.com</p>
+        <p>Member since: January 2024</p>
+        <div class="profile-actions">
+            <button class="btn-edit-profile">Edit Profile</button>
+            <button class="btn-change-password">Change Password</button>
+            <button class="btn-logout">Logout</button>
+        </div>
+    </div>
+    <body>
+        
+    <div class="enrolled-classes">
+        <h3>My Enrolled Classes</h3>
+        <ul>
+            <li>Introduction to Python</li>
+            <li>Advanced Calculus</li>
+            <!-- More enrolled classes can be dynamically added here -->
+        </ul>
+    </div>
+
+    <div class="uploaded-notes">
+        <h3>My Uploaded Notes</h3>
+        <ul>
+            <li><a href="https://www.geeksforgeeks.org/python-programming-language-tutorial/">Python Programming Guide</a></li>
+            <li><a href="https://www.geogebra.org/">Algebra Basics</a></li>
+            <!-- More uploaded notes can be dynamically added here -->
+        </ul>
+    </div>
+    </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Edit Profile Button
+            const editProfileButton = document.querySelector('.btn-edit-profile');
+            editProfileButton.addEventListener('click', function() {
+                alert('Edit Profile functionality to be implemented!');
+                // You can redirect to an edit profile page or open a modal here.
+            });
+    
+            // Change Password Button
+            const changePasswordButton = document.querySelector('.btn-change-password');
+            changePasswordButton.addEventListener('click', function() {
+                alert('Change Password functionality to be implemented!');
+                // Similar to above, redirect or open a modal for changing the password.
+            });
+    
+            // Logout Button
+            const logoutButton = document.querySelector('.btn-logout');
+            logoutButton.addEventListener('click', function() {
+                if (confirm('Are you sure you want to log out?')) {
+                    // Handle logout logic here, e.g., redirecting to a logout endpoint.
+                    alert('You have been logged out.');
+                    window.location.href = '/logout'; // Adjust the URL as necessary
+                }
+            });
+        });
+    </script>    
+</html>

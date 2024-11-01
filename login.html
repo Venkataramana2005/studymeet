@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Reset some default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(145deg, #1d2b64, #f8cdda);
+        }
+
+        .login-container {
+            width: 400px;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2), -10px -10px 20px rgba(255, 255, 255, 0.2);
+            background: #f3f3f3;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 28px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 30px;
+            border: none;
+            box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px rgba(255, 255, 255, 0.7);
+            background: #e6e6e6;
+            outline: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            background: #f8f8f8;
+        }
+
+        .input-group label {
+            position: absolute;
+            top: 12px;
+            left: 20px;
+            font-size: 14px;
+            color: #999;
+            pointer-events: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus + label,
+        .input-group input:not(:placeholder-shown) + label {
+            top: -12px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(145deg, #1d2b64, #f8cdda);
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px rgba(255, 255, 255, 0.3);
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.2), -7px -7px 14px rgba(255, 255, 255, 0.2);
+        }
+
+        .forgot-password {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .forgot-password a {
+            color: #1d2b64;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="text" id="username" required placeholder=" ">
+                <label for="username">Username</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" required placeholder=" ">
+                <label for="password">Password</label>
+            </div>
+            <button type="button" class="login-btn" onclick="validateLogin()">Login</button>
+        </form>
+        <p class="forgot-password">
+            Forgot your password? <a href="#">Click here</a>
+        </p>
+    </div>
+
+    <script>
+        function validateLogin() {
+            // Get form input values
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            // Basic validation
+            if (username === "" || password === "") {
+                alert("Please fill in both fields.");
+                return;
+            }
+
+            // Placeholder for authentication logic (e.g., API call)
+            if (username === "admin" && password === "password") {
+                alert("Login successful!");
+                // Redirect to homepage or dashboard
+                window.location.href = "studymeet.html";  // Replace with the actual page you want to navigate to
+            } else {
+                alert("Invalid username or password.");
+            }
+        }
+    </script>
+</body>
+</html>

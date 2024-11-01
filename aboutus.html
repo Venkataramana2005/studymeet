@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        /* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a2e; /* Dark background for the entire page */
+}
+
+/* Footer Section */
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, rgba(63, 94, 251, 0.8), rgba(252, 70, 107, 0.8));
+    color: #fff;
+    text-align: left;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s;
+}
+
+.footer-container:hover {
+    transform: translateY(-5px); /* Subtle lift effect on hover */
+}
+
+/* Footer Container Background */
+.footer-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    filter: blur(15px);
+    z-index: -1;
+}
+
+/* Footer About Section */
+.footer-about h4,
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #ffeb3b;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.footer-about p,
+.footer-contact p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* Footer Links Section */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease-in-out, transform 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+.footer-links a:hover {
+    color: #ffeb3b;
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    height: 3px;
+    background: #ffeb3b;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Footer Contact Section */
+.footer-contact p {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(63, 94, 251, 0.8), rgba(252, 70, 107, 0.8));
+    padding: 20px;
+    color: #fff;
+    font-size: 0.9rem;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Bottom Text */
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom p::before {
+    content: "★ ";
+    color: #ffeb3b;
+    margin-right: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-container div {
+        margin-bottom: 30px;
+    }
+}
+
+    </style>
+    <div class="footer-container">
+        <div class="footer-about">
+            <h4>About StudyMeet</h4>
+            <p>StudyMeet is a collaborative learning platform offering live classes, shared notes, and interactive tools for students and educators alike.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#notes">Notes</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#faq">FAQs</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>Email: support@studymeet.com</p>
+            <p>Phone: +123 456 7890</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 StudyMeet. All rights reserved.</p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // Handle quick link clicks
+    const quickLinks = document.querySelectorAll('.footer-links a');
+    quickLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent the default anchor behavior
+            const targetId = event.target.getAttribute('href').substring(1); // Get the target section ID
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to section
+            }
+        });
+    });
+
+    // Optional: Handle contact information submission (if you have a form)
+    const contactInfo = {
+        email: 'support@studymeet.com',
+        phone: '+123 456 7890'
+    };
+
+    // Log contact information for demonstration purposes
+    console.log('Contact Information:', contactInfo);
+});
+
+    </script>
+</html>

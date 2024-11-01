@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        /* General Section Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #2e2e2e;
+        }
+
+        .notes-section {
+            background: linear-gradient(145deg, #b3cde0, #ffffff);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 800px;
+            width: 90%;
+            margin: 20px auto;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .notes-section:hover {
+            transform: scale(1.01);
+        }
+
+        .notes-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #37474f;
+            margin-bottom: 30px;
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Filter Styles */
+        .notes-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            align-items: center;
+        }
+
+        .notes-filter select, .btn-search-notes {
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .notes-filter select {
+            background: #e0f7fa;
+            color: #00796b;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .notes-filter select:focus {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-search-notes {
+            background: linear-gradient(145deg, #00796b, #004d40);
+            color: white;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-search-notes:hover {
+            background: #00695c;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+            transform: translateY(-2px);
+        }
+
+        /* Note Cards */
+        .notes-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .note-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.note-card:hover {
+    transform: scale(1.02);
+}
+
+.note-card h3 {
+    color: #1976d2;
+    margin: 0 0 10px; /* Space below the title */
+}
+
+.note-info {
+    display: flex; /* Flexbox for side-by-side alignment */
+    align-items: center;
+    justify-content: space-between; /* Space between text and button */
+    margin-top: 10px; /* Space above this section */
+}
+
+.note-info p {
+    color: #555555;
+    margin: 0;
+}
+
+.btn-download {
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-download:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+    </style>
+    
+    <body>
+        <section id="notes" class="notes-section">
+            <h2>Shared Notes</h2>
+            <div class="notes-filter">
+                <label for="note-subject">Subject:</label>
+                <select id="note-subject">
+                    <option value="math">Mathematics</option>
+                    <option value="science">Science</option>
+                    <option value="programming">Programming</option>
+                    <option value="history">History</option>
+                </select>
+                <button class="btn-search-notes">Search Notes</button>
+            </div>
+            <div class="notes-list">
+                <!-- Sample Note Card -->
+                <div class="note-card">
+                    <h3>Algebra Basics</h3>
+                    <p>Uploaded by: Alice Green</p>
+                    <a href="algebra.pdf" download="Algebra.pdf" class="btn-download">Download PDF</a>
+                </div>
+                <div class="note-card">
+                    <h3>Python Programming Guide</h3>
+                    <p>Uploaded by: Bob Blue</p>
+                    <a href="python.pdf" download="Python.pdf" class="btn-download">Download PDF</a>
+                </div>
+                <!-- More note cards can be added dynamically -->
+            </div>
+        </section>
+
+        <script>
+            // JavaScript for adding 3D tilt effect on hover
+            document.querySelectorAll('.note-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const { offsetX, offsetY, target } = e;
+                    const { offsetWidth, offsetHeight } = target;
+                    const rotateX = ((offsetY / offsetHeight) - 0.5) * 15; 
+                    const rotateY = ((offsetX / offsetWidth) - 0.5) * -15;
+                    card.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(500px) rotateX(0) rotateY(0)';
+                });
+            });
+        </script>
+    </body>
+</html>
